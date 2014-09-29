@@ -19,7 +19,7 @@ class bmi_calc(Tkinter.Tk):
 	def initialize(self):
 		
 		self.grid()
-		self.geometry('400x300')
+		self.geometry('350x250')
 
 		#self.label_standard_vs_metric
 		# unit = self.IntVar()
@@ -57,6 +57,9 @@ class bmi_calc(Tkinter.Tk):
 		self.entry_bmi.grid(column=2,row=10, pady=5, padx=5, sticky="W")
 		self.entry_bmi.bind("<Button-1>", self.calcBMI)
 		self.entryVariable.set(u"Your BMI is here.")
+
+		self.quit_app = Tkinter.Button(self, text="Quit", command=self.quit)
+		self.quit_app.grid(column=2, row=12, pady=5, padx=5, sticky="W")
 		
 
 		#prevent the main window from resizing
