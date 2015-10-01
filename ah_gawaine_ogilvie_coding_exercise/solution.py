@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import sys
 
-from math import factorial
-
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 def lexicographic_index(p):
     """
@@ -24,7 +27,21 @@ def lexicographic_index(p):
     return result + 1
 
 
+def alpha_seq_rank(word):
+    # sort word sequence in alphabetical order
+    rank_list = sorted(word)
+    word_score = 1                  # initiate lowest rank
+
+    print "Rank List: ", rank_list
+    for i in word:
+        rank = rank_list.index(i)
+        word_score += factorial(rank) * rank
+        rank_list.remove(rank_list[rank])
+        #print rank, word_score
+
+    return word_score
+
+
 if __name__ == '__main__':
-    #print lexicographic_index("47056132")
-    print lexicographic_index("QUESTION")
-    #print lexicographic_index("AB")
+    #print lexicographic_index("QUESTION")
+    print alpha_seq_rank("QUESTION")

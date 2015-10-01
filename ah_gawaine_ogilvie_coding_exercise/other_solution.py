@@ -1,57 +1,76 @@
 #!/usr/bin/env python
+#import os
+#import psutil
+import sys
 
-#   http://stackoverflow.com/questions/24054434/word-ranking-partial-completion
+"""
+Author: Gawaine O'Gilvie
+Date Create: 10/1/2015
+Language: Python 2.7.9
+Purpose: Returns the index of a given permutation without generating the list of
+         permutations.
+"""
 
-def fact(n):
-    """factorial of n, n!"""
-
-    f = 1
-
-    while n > 1:
-         f *= n
-         n -= 1
-
-    return f
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 
-def rrank(s):
+def get_word_rank(word):
     """Back-end to rank for 0-based rank of a list permutation"""
 
+    word_length = len(word)
+
     # trivial case
-    if len(s) < 2: return 0
+    if word_length < 2 :
+        return 0
 
-    order = s[:]
-    order.sort()
+    sorted_word = sorted(word)
 
-    denom = 1
+    duplicate_count = 1
 
-    # account for multiple occurrences of letters
-    for i, c in enumerate(order):
+    # portion to consider repitition
+    for index, item in enumerate(sorted_word):
         n = 1
-        while i + n < len(order) and order[i + n] == c:
+        while index + n < len(sorted_word) and sorted_word[index + n] == item:
             n += 1
 
-        denom *= n
+        duplicate_count *= n
 
     # starting letters alphabetically before current letter
-    pos = order.index(s[0])
+    pos = sorted_word.index(word[0])
 
     #recurse to list without its head
-    return fact(len(s) - 1) * pos / denom + rrank(s[1:])
+    return factorial(word_length - 1) * pos / duplicate_count + get_word_rank(word[1:])
 
 
-def rank(s):
-    """Determine 1-based rank of string permutation"""
+def return_rank(word):
+    """Adds one to the get_word_rank(s) function because it is zero-based.
+       And converts every word to uppercase as well.
+    """
+    if len(word) > 20:
+        print "Error: Word must be less than or equal to 20 letters. Please try again."
+        sys.exit(1)
 
-    return rrank(list(s)) + 1
+    return get_word_rank(list(word.upper())) + 1
 
 
-strings = [
-    "ABC", "CBA",
-    "ABCD", "BADC", "DCBA", "DCAB", "FRED",
-    "QUESTION", "BOOKKEEPER", "JACBZPUC",
-    "AAAB", "AABA", "ABAA", "BAAA", "ABAB"
-]
 
-for s in strings:
-    print s, rank(s)
+if __name__ == '__main__':
+
+    ### TESTING OUTPUT
+    #test_word_set = ["ab","ba","abab","aaab","BAAA","QUESTION", "BOOKKEEPER", "NONINTUITIVENESS"]
+
+    ### print test set with word score
+    #print [(i, return_rank(i)) for i in test_word_set]
+
+    if len(sys.argv) > 1:
+        print return_rank(sys.argv[1])
+    else:
+        print "Error: No string provided. Enter a string."
+
+
+#process = psutil.Process(os.getpid())
+#print "RAM Usage: ", process.get_memory_info()[0] / float(2**20), "MB"

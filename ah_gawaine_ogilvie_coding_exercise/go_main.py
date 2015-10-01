@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import sys
 
+#   http://stackoverflow.com/questions/24054434/word-ranking-partial-completion
+
 def factorial(n):
     if n == 0:
         return 1
