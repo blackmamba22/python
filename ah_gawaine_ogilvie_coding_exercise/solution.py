@@ -4,10 +4,6 @@ import sys
 from math import factorial
 
 
-def lexicographical_index2(p):
-    p = int(p)
-
-
 def lexicographic_index(p):
     """
     Return the lexicographic index of the permutation `p` among all
@@ -30,5 +26,5 @@ def lexicographic_index(p):
 
 if __name__ == '__main__':
     #print lexicographic_index("47056132")
-    #print lexicographic_index("QUESTION")
-    print lexicographic_index("AB")
+    print lexicographic_index("QUESTION")
+    #print lexicographic_index("AB")
