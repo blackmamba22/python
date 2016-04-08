@@ -25,3 +25,4 @@ class FirstSteps:
         finally:
             print ("\nEnergy in Joules = {0:.2f}\nNumber tons of TNT exploded = {1:.2f}"
                 .format(energy_in_joules, num_tons_tnt_exploded) )
+            return (energy_in_joules, num_tons_tnt_exploded)
