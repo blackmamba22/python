@@ -10,8 +10,6 @@ Purpose
 A module of python3 projects for Computer Science & Software Engineering. This
 module will basically be a solution to the projects listed at the link.
 
-
-
 First Steps
 -----------
 + `Richter Scale <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/01_Beginnings/FirstWeekProjects/Richter/project01.pdf>`_
@@ -22,7 +20,6 @@ First Steps
 + Population
 + Time Travel
 + Debt
-
 
 Simple Programs
 ---------------

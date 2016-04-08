@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
-from projects import FirstSteps
+from FirstSteps import FirstSteps as fs
 
-print ("Hi Hello world!")
+if __name__ == '__main__':
+    fs.richter_scale()
