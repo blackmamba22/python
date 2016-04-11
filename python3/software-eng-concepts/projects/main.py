@@ -3,4 +3,4 @@
 from FirstSteps import FirstSteps as fs
 
 if __name__ == '__main__':
-    fs.richter_scale()
+    print (fs.richter_scale())
