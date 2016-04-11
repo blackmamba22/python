@@ -12,14 +12,14 @@ module will basically be a solution to the projects listed at the link.
 
 First Steps
 -----------
-+ `Richter Scale <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/01_Beginnings/FirstWeekProjects/Richter/project01.pdf>`_
-+ `Windchill <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/01_Beginnings/FirstWeekProjects/WindChill/project01.pdf>`_
-+ Arithmetic
-+ Gasoline
-+ Measurement
-+ Population
-+ Time Travel
-+ Debt
++ `Richter Scale <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/01_Beginnings/FirstWeekProjects/Richter/project01.pdf>`_: Input some numbers, do some simple arithmetic, output results.(Python3)
++ `Windchill <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/01_Beginnings/FirstWeekProjects/WindChill/project01.pdf>`_: Input some numbers, do some simple arithmetic, output results.(Python3)
++ Arithmetic: Input some numbers, do some simple arithmetic, output results.
++ Gasoline: Input some numbers, do some simple arithmetic on gas and oil quantities, output results.
++ Measurement: Input some numbers, do some simple arithmetic to do silly conversions such as furlongs/fortnight, output results.
++ Population: Input some numbers, do some simple arithmetic to estimate today's U.S. population, output results.
++ Time Travel: Input some numbers, do some simple arithmetic to calculate travel time between stars, output results.
++ Debt: Calculate the height of a stack of bills based on the national debt.
 
 Simple Programs
 ---------------
@@ -33,7 +33,7 @@ Simple Programs
 
 Control
 -------
-+ Draw : Draw regular patterns using TurtleGraphics. (Python3)
++ `Draw <http://www.cse.msu.edu/~cse231/PracticeOfComputingUsingPython/02_Control/Draw>`_: Draw regular patterns using TurtleGraphics. (Python3)
 + Making Change : Making change.
 + Number Puzzle: SplitNumber: Split numbers into increasing sequences, e.g. 154152 -> 15, 41, 52. (Python3)
 + WaterBilling: Calculate water bills based on category and useage. (Python3)
