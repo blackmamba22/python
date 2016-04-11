@@ -22,5 +22,35 @@ class RichterScaleTestCase(unittest.TestCase):
             fs.richter_scale("*/356+$%")
 
 
+class WindChillTemperatureIndexTestCase(unittest.TestCase):
+    """Tests for wind_chill"""
+
+    def test_windchill_index_known_values(self):
+        """Tests the known values"""
+        self.assertEqual(fs.calculate_windchill_temperature_index
+                                (air_temp=10.0, wind_speed=15.0), -6.5895344209562525)
+        self.assertEqual(fs.calculate_windchill_temperature_index
+                                (air_temp=0.0, wind_speed=25.0), -24.093780999553864)
+        self.assertEqual(fs.calculate_windchill_temperature_index
+                                (air_temp=-10.0, wind_speed=35.0), -41.16894662953316)
+
+    def test_windchill_known_bad_values(self):
+        """Test the input values that are guaranteed to fail."""
+        with self.assertRaises(ValueError):
+            fs.calculate_windchill_temperature_index(air_temp=100, wind_speed=15)
+
+        with self.assertRaises(ValueError):
+            fs.calculate_windchill_temperature_index(air_temp=25, wind_speed=2)
+
+        with self.assertRaises(ValueError):
+            fs.calculate_windchill_temperature_index(air_temp="abc", wind_speed="abc")
+
+        with self.assertRaises(ValueError):
+            fs.calculate_windchill_temperature_index(air_temp="zz5", wind_speed="10.0")
+
+    def test_windchill_return_instance(self):
+        """Test that a float type is returned"""
+        self.assertIsInstance(fs.calculate_windchill_temperature_index
+                                (air_temp=10.0, wind_speed=15.0), float)
 if __name__ == '__main__':
     unittest.main()
