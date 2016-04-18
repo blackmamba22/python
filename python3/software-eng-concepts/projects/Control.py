@@ -74,3 +74,46 @@ class Control:
             w_cor += 50
             #z_cor += 50
         turtle.done()
+
+    @staticmethod
+    def menu_making_change(price):
+        """helper function: Menu for making_change()"""
+        menu = """
+                Menu for deposits:
+                 'n' - deposit a nickel
+                 'd' - deposit a dime
+                 'q' - deposit a quarter
+                 'o' - deposit a one dollar bill
+                 'f' - deposit a five dollar bill
+                 'c' - cancel the purchase
+                 """
+        print (menu)
+
+        if price >= 100:
+            pass
+            #print ("Payment due: %s dollars and %s cents" % (split(str(price/100)), ))
+
+    @staticmethod
+    def making_change():
+        """ """
+        quarters, nickels, dimes = (25, 25, 25)
+
+        price = ""
+        while price != "q":
+            if price == "q":
+                sys.exit(0)
+            try:
+                price = input("Enter price (e.g. xx.xx) or q to quit: ")
+                price = round(float(price) * 100)
+            except ValueError as e:
+                print(e)
+                raise
+
+            if price < 0:
+                print("Error: Enter a price that is greater than 0.")
+                continue
+            elif price % 5 != 0:
+                print("Error: Enter a price that's divisible by .05")
+                continue
+
+            __class__.menu_making_change(price)

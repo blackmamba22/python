@@ -8,4 +8,6 @@ if __name__ == '__main__':
     #print (fs.calculate_windchill_temperature_index())
 
     # Control class
-    cn.draw_regular_patterns()
+    #cn.draw_regular_patterns()
+    cn.making_change()
+    #cn.menu_making_change()
