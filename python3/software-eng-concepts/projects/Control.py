@@ -89,9 +89,30 @@ class Control:
                  """
         print (menu)
 
-        if price >= 100:
-            pass
-            #print ("Payment due: %s dollars and %s cents" % (split(str(price/100)), ))
+        if price < 100:
+            print(price)
+            print("Payment due: %s cents" % (str(price)))
+        elif price >= 100:
+            print(price)
+            tmp_price = str(price/100).split('.') # splitting decimal number
+            print ("Payment due: %s dollars and %s cents" % (tmp_price[0], tmp_price[1]))
+
+        # ask for user input, deposit
+        deposit = ""
+        while deposit != "c":
+            deposit = input("Indicate your deposit: ")
+            if deposit == 'c': return
+            if deposit == 'n':
+                price = price - 5
+            elif deposit == 'd':
+                price = price - 10
+            elif deposit == 'q':
+                price = price - 25
+            elif deposit == 'o':
+                price = price - 100
+            else:
+                print("Invalid input, please try again.")
+
 
     @staticmethod
     def making_change():
@@ -100,10 +121,12 @@ class Control:
 
         price = ""
         while price != "q":
-            if price == "q":
-                sys.exit(0)
             try:
                 price = input("Enter price (e.g. xx.xx) or q to quit: ")
+
+                if str(price) == "q":
+                    print("Thank You and have a good day =)")
+                    sys.exit(0)
                 price = round(float(price) * 100)
             except ValueError as e:
                 print(e)
