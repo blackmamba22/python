@@ -94,7 +94,8 @@ class Control:
             print("Payment due: %s cents" % (str(price)))
         elif price >= 100:
             print(price)
-            tmp_price = str(price/100).split('.') # splitting decimal number
+            tmp_price = str(price/100).split('.') # splitting decimal number, TO DO
+            print(tmp_price)
             print ("Payment due: %s dollars and %s cents" % (tmp_price[0], tmp_price[1]))
 
         # ask for user input, deposit
