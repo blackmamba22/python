@@ -23,6 +23,28 @@ def convert_decimal_to_binary(dec_number):
 
     return binary_result
 
+
+def base_converter(dec_number, base):
+    """
+    Converts a decimal number from base 10 to another base provided.
+    Bases 2 and up.
+    """
+    digits = "0123456789ABCDEF"
+
+    remstack = Stack()
+    while dec_number > 0:
+        rem = dec_number % base
+        remstack.push(rem)
+        dec_number = dec_number // base
+
+    new_base_result = ""
+    while not remstack.isEmpty():
+        new_base_result += digits[remstack.pop()]
+
+    return new_base_result
+
 if __name__ == '__main__':
     print (convert_decimal_to_binary(233))
     print (convert_decimal_to_binary(42))
+    print(base_converter(26,26))
+    print(base_converter(233,16))

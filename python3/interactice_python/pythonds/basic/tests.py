@@ -31,8 +31,18 @@ class TestStackAlgorithms(unittest.TestCase):
         self.assertEqual(revstring('1234567890'),'0987654321')
 
     def test_decimal_to_binary(self):
+        "Tests known values for the function convert_decimal_to_binary()"
         self.assertEqual(convert_decimal_to_binary(233), "11101001")
         self.assertEqual(convert_decimal_to_binary(0), "")
+
+    def test_base_converter(self):
+        "Tests known values for the function base_converter()"
+
+        # test for base 2
+        self.assertEqual(base_converter(25, 2), "11001")
+
+        # test for base 16
+        self.assertEqual(base_converter(233, 16), "E9")
 
 if __name__ == '__main__':
     unittest.main()
