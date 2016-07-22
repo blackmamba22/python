@@ -1,14 +1,20 @@
 __author__ = 'Gawaine_OGilvie'
 
+
 class Fibonacci:
+
     def __init__(self):
         pass
 
     def fib(self, n):
-        'Returns the Nth number in the fibonacci sequence'
-        if n <= 0: return None
-        if n == 1: return 0
-        if n == 2: return 1
+        """Returns the Nth number in the fibonacci sequence"""
+
+        if n <= 0:
+            return None
+        if n == 1:
+            return 0
+        if n == 2:
+            return 1
 
         a, b = 0, 1
         count = 2
