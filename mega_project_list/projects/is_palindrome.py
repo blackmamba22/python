@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def check_paliindrome(string):
+def check_palindrome(string):
     """Returns true if string is palindrome"""
     import re
     mainstr = re.sub(r'[^a-zA-Z0-9]', r'', string)
