@@ -7,5 +7,5 @@ def check_palindrome(string):
     return mainstr[::-1].lower() == mainstr.lower()
 
 if __name__ == '__main__':
-    print(check_paliindrome("racecar"))
-    print(check_paliindrome("A Santa at Nasa"))
+    print(check_palindrome("racecar"))
+    print(check_palindrome("A Santa at Nasa"))
